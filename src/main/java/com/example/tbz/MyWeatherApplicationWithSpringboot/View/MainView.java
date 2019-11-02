@@ -5,7 +5,6 @@ import com.vaadin.annotations.StyleSheet;
 import com.vaadin.icons.VaadinIcons;
 import com.vaadin.server.ClassResource;
 import com.vaadin.server.ExternalResource;
-import com.vaadin.server.Page;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.spring.annotation.SpringUI;
 import com.vaadin.ui.*;
@@ -20,7 +19,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 @SpringUI(path = "")
-@StyleSheet("/resources/style.com")
+@StyleSheet("resources/static/scssTest.scss")
 public class MainView extends UI {
     @Autowired
     private WeatherService weatherService;
@@ -89,6 +88,7 @@ public class MainView extends UI {
         mainLayout.setDefaultComponentAlignment(Alignment.MIDDLE_CENTER);
 
         setContent(mainLayout);
+
     }
 
     private void setHeader() {
@@ -180,7 +180,6 @@ public class MainView extends UI {
 
         //currentTempLayout.addComponents(currentLocationTitle,currentTemp);
         currentTempLayout.addComponents(currentTemp);
-
     }
 
     private void dashBoardDescription() {
